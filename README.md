@@ -14,24 +14,26 @@ copy temp_json from 'D:\test.json';
 
 Текст программы в PostgreSQL:
 
-select values->>'date'as date,
-values->>'card'as card,
-values->>'account'as account,
-values->>'account_valid_to'as account_valid_to,
-values->>'client'as client,
-values->>'last_name'as last_name,
-values->>'first_name'as first_name,
-values->>'patronymic'as patronymic,
-values->>'date_of_birth'as date_of_birth,
-values->>'passport'as passport,
-values->>'passport_valid_to'as passport_valid_to,
-values->>'phone'as phone,
-values->>'oper_type'as oper_type,
-values->>'amount'as amount,
-values->>'open_result'as open_result,
-values->>'terminal'as terminal,
-values->>'terminal_type'as terminal_type,
-values->>'city'as city,
+select values->>'date'as date;
+
+values->>'card'as card;
+
+values->>'account'as account;
+values->>'account_valid_to'as account_valid_to;
+values->>'client'as client;
+values->>'last_name'as last_name;
+values->>'first_name'as first_name;
+values->>'patronymic'as patronymic;
+values->>'date_of_birth'as date_of_birth;
+values->>'passport'as passport;
+values->>'passport_valid_to'as passport_valid_to;
+values->>'phone'as phone;
+values->>'oper_type'as oper_type;
+values->>'amount'as amount;
+values->>'open_result'as open_result;
+values->>'terminal'as terminal;
+values->>'terminal_type'as terminal_type;
+values->>'city'as city;
 values->>'address'as address
 from(
 select json_array_elements(replace(values,'\','\\')::json) as values
